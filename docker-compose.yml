@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  api:
+    container_name: test
+    image: index.docker.io/niel5343/test
+    ports:
+      - "5000:5000"
+    networks:
+      - local
+    deploy:
+      placement:
+        max_replicas_per_node: 10
+      replicas: 4
+      update_config:
+        parallelism: 1
+        delay: 20s
+        order: start-first
+
+networks: 
+  local:
+    driver: overlay
