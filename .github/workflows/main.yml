@@ -29,3 +29,20 @@ jobs:
           context: .
           push: true
           tags: niel5343/test:latest
+          
+  update_docker_swarm_services:
+
+    runs-on: ubuntu-latest
+    needs: [build_and_deploy]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DROPLET_IP }}
+        USERNAME: ${{ secrets.DROPLET_USERNAME }}
+        PORT: 22
+        KEY: ${{ secrets.DROPLET_SSHKEY }}
+        script: docker service update --image index.docker.io/niel5343/test stack_api
