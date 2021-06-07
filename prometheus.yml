@@ -23,5 +23,5 @@ scrape_configs:
       - names:
           - 'tasks.stack_test'
         type: 'A'
-        port: 3000
+        port: 5000
     metrics_path: '/metrics'
