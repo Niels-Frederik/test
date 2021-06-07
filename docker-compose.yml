@@ -6,6 +6,9 @@ services:
     image: index.docker.io/niel5343/test
     ports:
       - "5000:3000"
+    depends_on:
+      - prometheus
+      - grafana
     networks:
       - local
     deploy:
@@ -14,8 +17,34 @@ services:
         parallelism: 1
         delay: 20s
         order: start-first
+        
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - local
+      
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3001:3000"
+    user: "104"
+    networks:
+      - local
 
 networks: 
   local:
     driver: overlay
     attachable: true
+volumes:
+  grafana-storage:
