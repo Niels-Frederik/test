@@ -8,6 +8,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/test', (req, res) => {
+  console.log("this is a test log on test endpoint")
+  res.send('Hello Emils mor!')
+})
+
 //app.get('/metric', (req,res) => {
 //  res.send(count)
 //}
