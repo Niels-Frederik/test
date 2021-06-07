@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  api:
+  test:
     container_name: test
     image: index.docker.io/niel5343/test
     ports:
