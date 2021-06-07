@@ -21,7 +21,7 @@ scrape_configs:
   - job_name: 'api'
     dns_sd_configs:
       - names:
-          - 'tasks.stack_api'
+          - 'tasks.stack_test'
         type: 'A'
         port: 5000
     metrics_path: '/metrics'
