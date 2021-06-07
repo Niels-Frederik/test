@@ -28,4 +28,4 @@ jobs:
           file: dockerfile
           context: .
           push: true
-          tags: minitwit/test:latest
+          tags: niel5343/test:latest
