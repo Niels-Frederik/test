@@ -17,6 +17,10 @@ services:
         parallelism: 1
         delay: 20s
         order: start-first
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://142.93.101.173/loki/api/v1/push"
         
   prometheus:
     image: prom/prometheus:latest
