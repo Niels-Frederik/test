@@ -5,7 +5,7 @@ services:
     container_name: test
     image: index.docker.io/niel5343/test
     ports:
-      - "5000:3000"
+      - "5000:5000"
     depends_on:
       - prometheus
       - grafana
@@ -40,7 +40,7 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     ports:
-      - "3001:3001"
+      - "3001:3000"
     user: "104"
     networks:
       - local
