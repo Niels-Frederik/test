@@ -45,4 +45,4 @@ jobs:
         USERNAME: ${{ secrets.DROPLET_USERNAME }}
         PORT: 22
         KEY: ${{ secrets.DROPLET_SSHKEY }}
-        script: docker service update --image index.docker.io/niel5343/test stack_api
+        script: docker service update --image index.docker.io/niel5343/test stack_test
