@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 services:
   api:
@@ -9,6 +9,8 @@ services:
     networks:
       - local
     deploy:
+      placement:
+        max_replicas_per_node: 10
       replicas: 4
       update_config:
         parallelism: 1
