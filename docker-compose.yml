@@ -57,6 +57,9 @@ services:
     networks:
       - loki
       - local
+    deploy:
+      placement:
+        constraints: [node.role == manager]
 
 networks: 
   local:
