@@ -3,7 +3,8 @@
     "test": "node unittest.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "prom-client": "^13.1.0"
   },
   "devDependencies": {
     "eslint": "^7.28.0"
