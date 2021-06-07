@@ -5,7 +5,7 @@ services:
     container_name: test
     image: index.docker.io/niel5343/test
     ports:
-      - "80:80"
+      - "5000:5000"
     networks:
       - local
     deploy:
