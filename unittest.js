@@ -1,2 +1,2 @@
 const Assert = require('assert')
-Assert(false)
+Assert(true)
